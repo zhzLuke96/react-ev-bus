@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  CI:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛎️ Checkout repository
+        uses: actions/checkout@master
+      - name: 🚧 Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: "12.x"
+      - name: 🚀 CI
+        run: |
+          npm install
+          npm run build
+          npm run test
