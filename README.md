@@ -1,5 +1,7 @@
 # myProject
 
+![CI](https://github.com/zhzLuke96/react-ev-bus/workflows/CI/badge.svg?branch=master)
+
 react event bus.
 
 ## Table of Contents
