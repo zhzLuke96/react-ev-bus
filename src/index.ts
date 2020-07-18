@@ -66,11 +66,12 @@ export const useBusState = <T>(type: string) => {
 
 export const useDispatch = (type: string) => {
     const evName = useEventName(type);
+    const state = useBusState(type);
     const dispatch = useCallback(
-        (detail: any = null) => {
+        (detail: any = state) => {
             window.dispatchEvent(new CustomEvent(evName, { detail }));
         },
-        [evName],
+        [evName, state],
     );
     return dispatch;
 };
